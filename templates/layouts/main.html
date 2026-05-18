@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="d-flex min-vh-100">
+
+    {% include 'partials/sidebar.html' %}
+
+    <main class="flex-grow-1 bg-light text-dark">
+        <div class="container-fluid p-4">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </main>
+
+</div>
+{% endblock %}

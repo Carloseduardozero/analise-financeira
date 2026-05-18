@@ -1,0 +1,45 @@
+{% extends 'layouts/auth.html' %}
+
+{% block title %}Criar conta{% endblock %}
+
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+
+    <div class="card bg-secondary-subtle border-0 shadow-lg" style="width: 420px; border-radius: 16px;">
+        <div class="card-body p-5">
+
+            <h1 class="text-center text-dark fw-bold mb-4">Criar conta</h1>
+
+            <form method="post">
+                {% csrf_token %}
+
+                <div class="mb-3">
+                    <label class="form-label fw-semibold text-dark">Usuário</label>
+                    <input type="text" name="username" class="form-control form-control-lg">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-semibold text-dark">Senha</label>
+                    <input type="password" name="password1" class="form-control form-control-lg">
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label fw-semibold text-dark">Confirmar senha</label>
+                    <input type="password" name="password2" class="form-control form-control-lg">
+                </div>
+
+                <button type="submit" class="btn btn-dark btn-lg w-100">
+                    Cadastrar
+                </button>
+            </form>
+
+            <p class="text-center mt-4 mb-0 text-dark">
+                Já tem conta?
+                <a href="{% url 'login' %}">Entrar</a>
+            </p>
+
+        </div>
+    </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,53 @@
+<aside class="bg-dark text-light p-3" style="width: 260px;">
+    <div class="mb-4">
+        <h4 class="fw-bold mb-0">Financeiro</h4>
+        <small class="text-secondary">Gestão pessoal</small>
+    </div>
+
+    <nav class="nav flex-column gap-2">
+        <a class="nav-link text-light rounded px-3 py-2 bg-secondary" href="{% url 'dashboard:index' %}">
+            Dashboard
+        </a>
+
+        <a class="nav-link text-light rounded px-3 py-2" href="#">
+            Despesas
+        </a>
+
+        <a class="nav-link text-light rounded px-3 py-2" href="#">
+            Receitas
+        </a>
+
+        <a class="nav-link text-light rounded px-3 py-2" href="#">
+            Proventos
+        </a>
+
+        <a class="nav-link text-light rounded px-3 py-2" href="#">
+            Patrimônio
+        </a>
+
+        <a class="nav-link text-light rounded px-3 py-2" href="#">
+            Relatórios
+        </a>
+
+        <a class="nav-link text-light rounded px-3 py-2" href="#">
+            Categorias
+        </a>
+    </nav>
+
+    <div class="mt-5 pt-4 border-top border-secondary">
+        <p class="mb-2 text-secondary small">
+            Logado como
+        </p>
+
+        <p class="fw-semibold mb-3">
+            {{ request.user.username }}
+        </p>
+
+        <form method="post" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-outline-light btn-sm w-100">
+                Sair
+            </button>
+        </form>
+    </div>
+</aside>
