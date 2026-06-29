@@ -1,0 +1,1 @@
+from .categoria_enum import TipoCategoria
