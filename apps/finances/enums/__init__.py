@@ -1,1 +1,2 @@
 from .categoria_enum import TipoCategoria
+from .forma_pagamento_enum import FormaPagamento
