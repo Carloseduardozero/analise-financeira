@@ -1,0 +1,33 @@
+{% extends 'layouts/main.html' %}
+
+{% block title %}Excluir receita{% endblock %}
+
+{% block content %}
+<div class="mb-4">
+    <h1 class="fw-bold mb-1">Excluir receita</h1>
+    <p class="text-muted mb-0">Confirme a exclusão da receita.</p>
+</div>
+
+<div class="card border-0 shadow-sm">
+    <div class="card-body">
+        <p>
+            Tem certeza que deseja excluir a receita
+            <strong>{{ receita.descricao }}</strong>
+            no valor de
+            <strong>R$ {{ receita.valor }}</strong>?
+        </p>
+
+        <form method="post">
+            {% csrf_token %}
+
+            <button type="submit" class="btn btn-danger">
+                Excluir
+            </button>
+
+            <a href="{% url 'finances:receita_list' %}" class="btn btn-outline-secondary">
+                Cancelar
+            </a>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -14,6 +14,13 @@ from apps.finances.views.despesa_views import (
     despesa_update_view,
 )
 
+from apps.finances.views.receita_views import (
+    receita_create_view,
+    receita_delete_view,
+    receita_list_view,
+    receita_update_view,
+)
+
 app_name = 'finances'
 
 urlpatterns = [
@@ -26,4 +33,9 @@ urlpatterns = [
     path('despesas/nova/', despesa_create_view, name='despesa_create'),
     path('despesas/<int:despesa_id>/editar/', despesa_update_view, name='despesa_update'),
     path('despesas/<int:despesa_id>/excluir/', despesa_delete_view, name='despesa_delete'),
+
+    path('receitas/', receita_list_view, name='receita_list'),
+    path('receitas/nova/', receita_create_view, name='receita_create'),
+    path('receitas/<int:receita_id>/editar/', receita_update_view, name='receita_update'),
+    path('receitas/<int:receita_id>/excluir/', receita_delete_view, name='receita_delete'),
 ]
